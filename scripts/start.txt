@@ -1,0 +1,89 @@
+title: Clubhouse Crashsite
+version: 1.0
+author: Mattias Gustavsson
+start: logo
+resolution: low
+colormode: rgb9
+display_filters: pc,lite,none
+hmargin_opt:5
+hmargin_txt:5
+hmargin_say:5
+hmargin_dialog:5
+hmargin_response:5
+alone_text: You are  alone.
+nothing_text: You carry nothing.
+
+//debug_start: billysroom
+
+
+=== logo ===
+
+snd: 427205__devern__moog-hit-and-violin-logo-sound.wav
+scr: made_with_yarnspin.png
+auto: intro_billy, 5s
+
+
+=== title ===
+
+scr: title.png
+act: credits
+
+
+=== credits ===
+
+mus: stop, 2.5s
+scr: credits.png
+act: billysroom_sleeping
+
+
+
+=== end ===
+
+txt: Thank you.
+txt:
+txt: yarnspin.dev
+act: exit
+
+
+=== billy ===
+
+name: Billy
+short: Billy
+face: billy.png
+
+
+=== brother ===
+
+name: Jake
+short: Jake
+face: brother.png
+
+
+=== dad ===
+
+name: Dad
+short: Dad
+face: dad.png
+
+
+=== mom ===
+
+name: Mom
+short: Mom
+face: mom.png
+
+
+=== alien ===
+
+name: Morp
+short: Morp
+face: alien.png
+
+
+=== kayla ===
+
+name: Kayla
+short: Kayla
+face: girlfriend.png
+
+

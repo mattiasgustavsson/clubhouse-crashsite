@@ -1,0 +1,99 @@
+=== attic ===
+
+img: attic.png
+not trap_placed ? txt: You are in the attic. There's a lot of dust here, and there are boxes piled everywhere. A bundle of wires runs along the wall.
+trap_placed ? txt: You are in the attic. There's a lot of dust here, and there are boxes piled everywhere. A bundle of wires runs along the wall. Your mouse trap is on the floor.
+
+opt: Search the boxes
+act: search_boxes
+
+opt: Examine the wires
+not dad_gone ? act: examine_wires
+dad_gone ? act: examine_wires_cut
+
+trap_placed ? not got_mouse ?
+opt: Inspect the mouse trap
+act: inspect_trap
+
+opt: Leave the attic
+act: hallway
+
+know_mice ? 
+use: Mouse Trap
+act: place_trap
+
+know_wires ? not dad_gone ?
+use: Wire Cutters
+act: cut_wires
+
+trap_placed ?
+use: Sandwich
+act: bait_trap
+
+=== search_boxes ===
+
+txt: They are just full of clothes and other boring stuff.
+act: mouse_trace
+
+
+=== mouse_trace ===
+
+txt: It looks like some of them have been nibbled on by mice or rats.
+act: set know_mice
+act: attic
+
+
+
+=== place_trap ===
+
+txt: You place the mouse trap on the floor.
+act: drop Mouse Trap
+act: set trap_placed
+act: return 
+
+
+
+=== inspect_trap ===
+
+not trap_baited ? txt: The trap is empty.
+trap_baited ? not mouse_caught ? txt: There is a sandwich in the trap.
+mouse_caught ? snd: short-applause.mp3
+mouse_caught ? snd: moderate-long2.mp3
+mouse_caught ? txt: There is a live mouse in the trap. You carefully take it out.
+mouse_caught ? act: get Mouse
+mouse_caught ? act: set got_mouse
+act: return
+
+
+=== examine_wires ===
+
+txt: There's a bundle of wires running down the wall and down through the floor.
+txt: One of them continues up to the satellite dish on the roof.
+act: set know_wires
+act: return
+
+
+=== examine_wires_cut ===
+
+txt: There's a bundle of wires running down the wall and down through the floor.
+txt: The one that goes up to the satellite dish has been cut.
+act: set know_wires
+act: return
+
+
+=== cut_wires ===
+
+snd: 383449__deleted_user_7146007__cutting-clipping-wire-copper.wav
+snd: mild-long1.mp3
+txt: You cut the wire to the satellite dish.
+act: drop Wire Cutters
+act: set dad_gone
+act: return
+
+
+=== bait_trap ===
+
+txt: You place the sandwich inside the trap
+act: set trap_baited
+act: drop Sandwich
+act: return

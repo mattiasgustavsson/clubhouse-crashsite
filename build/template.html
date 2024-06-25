@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>{{{title}}}</title>
+<link id="favicon" rel="shortcut icon" type="image/png" href="data:image/png;base64,{{{favicon}}}">
+<meta name="apple-mobile-web-app-title" content="{{{title}}}">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="apple-touch-icon" type="image/png" href="data:image/png;base64,{{{iosicon}}}">
+
+<style type="text/css">
+html, body, #a {
+    margin: 0;
+    padding: 0;
+    background:black;
+    color:white;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+#a {
+    width:100vw; 
+    height:75vw;
+    max-height:100vh;
+    max-width:133.33vh;
+    margin: auto;
+    position: absolute;
+    top:0;bottom:0;
+    left:0;right:0;
+}
+
+#wa_canvas {
+    display:block;
+    outline:0;
+    margin:0 auto;
+    width:1440px;
+    height:1080px;
+    max-width:100%;
+    max-height:100%;
+}
+
+#wa_log {
+    position: absolute; 
+    left: 0; 
+    right: 0; 
+    margin-left: auto; 
+    margin-right: auto; 
+    top: 0; 
+    bottom: 0; 
+    margin-top: auto; 
+    margin-bottom: auto; 
+    width: 300px;
+    height: 200px;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+}
+</style></head>
+<body>
+<div id="a">
+<canvas id="wa_canvas" onclick="window.focus();" oncontextmenu="event.preventDefault()"></canvas>
+<div id="wa_log">Loading...</div>
+</div>
+<script>
+var WA = {  canvas: document.getElementById('wa_canvas'),  started: function() { document.getElementById('wa_log').style.display = 'none'; window.focus();}, };
+{{{js}}}
+</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+=== intro_billy ===
+
+snd: stop,427205__devern__moog-hit-and-violin-logo-sound.wav,1s
+mus: 426704__fmceretta__corny-christmas-sitcom-opening.ogg
+scr: intro_billy.png
+auto: intro_alien,5s
+
+
+=== intro_alien ===
+
+scr: intro_alien.png
+auto: intro_mom,5s
+
+
+=== intro_mom ===
+
+scr: intro_mom.png
+auto: intro_dad,5s
+
+
+=== intro_dad ===
+
+scr: intro_dad.png
+auto: intro_brother,5s
+
+
+=== intro_brother ===
+
+scr: intro_brother.png
+auto: title,5s

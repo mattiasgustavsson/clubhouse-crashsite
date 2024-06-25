@@ -1,0 +1,100 @@
+=== billysroom_sleeping ===
+
+amb: 333960__kostrava__indoor_-apartments_hall_noise-2.wav,1s
+
+snd: stop,0.5s
+img: billysroom_night.png
+txt: You are asleep in your bed, on a night like any other, quiet and peaceful...
+act: sleeping_crash
+
+=== sleeping_crash ===
+
+snd: 95078__sandyrb__the-crash.wav
+txt: Suddenly, you are woken by a loud noise.
+act: crash_wake
+
+=== crash_wake ===
+
+snd: moderate-short1.mp3
+billy: Holy moly, what was that!
+act: crash_opt
+
+
+=== crash_opt ===
+
+img: billysroom_night.png
+txt: What would you like to do?
+
+opt: Go back to sleep
+act: back_to_sleep
+
+opt: Go out to the backyard to investigate
+act: backyard_investigate
+
+
+=== back_to_sleep ===
+
+snd: mild-short1.mp3
+billy: Are you kidding me!? This is way too exciting, I couldn't possibly go back to sleep now.
+act: crash_opt
+
+
+=== billysroom ===
+
+img: billysroom.png
+txt: You are in your room upstairs. The shelves along the wall are filled with toys and other things.
+
+opt: Look out the window
+act: look_backyard
+
+opt: Dig through the shelves
+got_mousetrap ?
+act: dig_shelves_nothing
+not got_mousetrap ?
+act: dig_shelves
+
+opt: Leave your room
+act: hallway
+
+
+=== billysroom_morning ===
+
+snd: stop,0.5s
+snd: 150879__nenadsimic__jazzy-chords.wav
+snd: mild-long1.mp3
+img: billysroom.png
+txt: The next morning...
+
+act: billysroom
+
+
+
+=== look_backyard ===
+
+snd: mild-long1.mp3
+img: backyard_noship.png
+txt: You can see your treehouse. The spaceship is gone, but the hole is still there.
+act: return
+
+
+=== dig_shelves_nothing ===
+
+txt: You look through the shelves, but there's nothing that grabs your attention.
+act: return
+
+
+=== dig_shelves ===
+
+txt: Looking through the shelves, you found the mouse trap you made for the science fair.
+act: get Mouse Trap
+act: set got_mousetrap
+act: billy_on_trap
+
+
+=== billy_on_trap ===
+
+snd: mild-short1.mp3
+billy: Oh yeah, this thing! I made it so it would catch the mice alive.
+billy: I never tested it. I wonder if it works...
+act: billysroom
+

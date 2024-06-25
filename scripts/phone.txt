@@ -1,0 +1,39 @@
+=== phone ===
+
+snd: pickup.wav
+snd: dialtone.wav,loop
+img: phone.png
+txt: You don't have anyone to call.
+
+use: Note
+act: call_kayla
+
+opt: Hang up
+act: hallway_hangup
+
+
+=== call_kayla ===
+
+snd: stop,dialtone.wav,0.2s
+snd: 273345__othercee__mobile_phone_-_dialing_tones_fast_l_close_r_distant.wav
+img: phone.png
+txt: You punch the number written on the note and wait for the call to go through.
+act: drop Note
+act: talk_kayla
+
+
+
+=== talk_kayla ===
+
+snd: stop,273345__othercee__mobile_phone_-_dialing_tones_fast_l_close_r_distant.wav
+snd: pickup.wav
+snd: explosive-long1.mp3
+kayla: Hello, Kayla speaking?
+billy: Umm, hi, this is Billy Henderson.
+kayla: Billy who? Who is this, why are you calling me?
+billy: My brother Jake wants to talk to you.
+kayla: Jake! I thought he'd never call! 
+kayla: Well, put him on!
+billy: Ok, I'll go get him, hold on.
+act: set kayla_waiting
+act: hallway

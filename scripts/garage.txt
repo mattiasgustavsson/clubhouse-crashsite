@@ -1,0 +1,281 @@
+=== garage ===
+
+not firstgarage ? snd: 706752__xkeril__nightmare-short-sting.wav
+not firstgarage ? snd: short-applause.mp3
+not firstgarage ? snd: mild-double.mp3
+act: set firstgarage
+img: garage_ship.png
+txt: You are in the garage. Morp's spaceship takes up most of it.
+
+need_tvbox ?
+opt: Rummage through the shelves
+not got_wirecutters ? act: rummage
+got_wirecutters ? act: rummage_nothing
+
+opt: Go to kitchen
+act: kitchen
+
+not need_amp ? 
+chr: alien
+act: talk_alien_need_amp
+
+need_amp ? not need_micro ? 
+chr: alien
+act: talk_alien_waiting_amp
+
+need_amp ? need_micro ? not need_tvbox ? 
+chr: alien
+act: talk_alien_waiting_micro
+
+need_amp ? need_micro ? need_tvbox ?
+chr: alien
+act: talk_alien_waiting_tvbox
+
+use: Microwave Oven
+act: use_micro
+
+use: Amplifier
+act: use_amp
+
+use: TV Box
+act: use_tvbox
+
+
+=== talk_alien_need_amp ===
+
+snd: loud-short2.mp3
+alien: Meep. Morp. Zeep.
+billy: What the heck was that?
+act: talk_alien_need_amp2
+
+
+=== talk_alien_need_amp2 ===
+
+snd: loud-short1.mp3
+alien: Oh, just thought I'd practice my "alien act" a bit, it's important to keep up appearances.
+billy: Yeah, whatever. How's the repairs going?
+alien: Not so well! I need some replacement parts.
+billy: How will we find that here on earth?
+act: talk_alien_need_amp3b
+
+=== talk_alien_need_amp3b ===
+
+snd: mild-short5.mp3
+alien: Ah, we will try our best to find the nearest earth equivalent of the advanced alien technology I need.
+alien: First, you need to find a current modulation device.
+act: talk_alien_need_amp3
+
+=== talk_alien_need_amp3 ===
+
+snd: moderate-short4.mp3
+billy: A what now?
+alien: Let me see, what do you use it for here on earth...
+alien: I think you use it to make sounds louder.
+billy: Like an amplifier? My brother has one...
+act: talk_alien_need_amp4
+
+=== talk_alien_need_amp4 ===
+
+snd: moderate-long1.mp3
+alien: Splendid! Let's have it!
+act: set need_amp
+act: garage
+
+
+=== talk_alien_waiting_amp ===
+
+snd: mild-short1.mp3
+alien: Did you get the current modulation device?
+
+use: Amplifier
+act: use_amp
+
+say: Still working on it.
+act: return
+
+
+=== use_amp ===
+
+act: drop Amplifier
+snd: loud-short1.mp3
+alien: Fantastic! I can't possibly journey through outer space without some banging tunes. This amp will do just fine.
+billy: Wait, I thought you needed it to repair the ship? But the amp wasn't necessary at all was it?
+act: use_amp2
+
+=== use_amp2 ===
+
+snd: loud-short2.mp3
+alien: Sure it was! Did you not hear that part about banging tunes?
+billy: Okay, okay, is there anything you *actually* need in order to take off?
+act: use_amp3
+
+=== use_amp3 ===
+
+snd: moderate-shortest.mp3
+alien: Yes! I need a short waveform emitter.
+billy: Where would I find one of those?!
+alien: Here on earth, devices like that are often installed in kitchens.
+billy: What, like a microwave? Yeah we have one of those...
+act: use_amp4
+
+=== use_amp4 ===
+
+snd: mild-long2.mp3
+alien: Ok, that settles it then! Good job!
+act: set need_micro
+act: garage
+
+
+=== talk_alien_waiting_micro ===
+
+snd: mild-short1.mp3
+alien: Did you get the short waveform emitter?
+
+use: Microwave Oven
+act: use_micro
+
+say: Still working on it.
+act: return
+
+
+=== use_micro ===
+
+act: drop Microwave Oven
+snd: moderate-long1.mp3
+alien: Yes, yes! This will do splendidly! The microwave oven in my ship is broken, and I hate flying without fresh popcorn. This solves my problem.
+billy: You did it again didn't you. The microwave was not needed for your ship to take off?
+act: use_micro2
+
+=== use_micro2 ===
+
+snd: lound-long1.mp3
+alien: Well, I can't take off without being able to make popcorn. What, I have to go all the way back to Betelgeuse-5 without good snacks? That's just cruel.
+billy: Okay, okay, is there anything else? Or can you take off now?
+alien: Well, I do need a long range communication receiver too.
+act: use_micro3
+
+=== use_micro3 ===
+
+snd: moderate-medium1.mp3
+billy: I think we are fresh out of those.
+alien: Ah, but I see you have a satellite dish on your roof...
+billy: You need the TV box? My dad would kill me...
+act: use_micro4
+
+=== use_micro4 ===
+
+snd: explosive-long1.mp3
+alien: That's a price I am willing to pay!
+alien: You don't want me to be stuck here forever, do you?
+billy: Fine, fine.
+act: set need_tvbox
+act: garage
+
+
+=== talk_alien_waiting_tvbox ===
+
+snd: mild-short1.mp3
+alien: Did you get the long range communication receiver?
+
+use: TV Box
+act: use_tvbox
+
+say: Still working on it.
+act: return
+
+
+
+=== use_tvbox ===
+
+act: drop TV Box
+snd: lound-long1.mp3
+alien: Amazing! You basically can't get any good channels along the milky way without one of these. Movie nights are a go!
+billy: I should have known. So your ship was basically fine the whole time, you just wanted these things for comfort?
+act: use_tvbox2
+
+=== use_tvbox2 ===
+
+snd: moderate-short3.mp3
+alien: Well, what's life without some creature comforts!
+billy: So, that's it, you have everything you need now?
+act: use_tvbox3
+
+=== use_tvbox3 ===
+
+snd: mild-short5.mp3
+alien: Well, I wouldn't say that... I'm sure I could think of more things to...
+act: use_tvbox4
+
+=== use_tvbox4 ===
+
+snd: moderate-long1.mp3
+billy: Okay then, everything good, ready to go, have a safe trip now.
+alien: Oh, it's like that now, is it? Well, I will be off then!
+alien: Thank you for all your help! I am sure I will be back here before you know it.
+act: use_tvbox5
+
+=== use_tvbox5 ===
+
+snd: loud-short2.mp3
+billy: Oh God I hope not!
+act: use_tvbox6
+
+=== use_tvbox6 ===
+
+snd: moderate-long1.mp3
+snd: moderate-long2.mp3
+alien: Yes, I will miss you too!
+act: takeoff
+
+
+=== takeoff ===
+
+img: takeoff.png
+txt: Morps ship hovers for a few moments, before it sets off towards space, to take him home to Betelgeuse-5.
+act: gone
+
+
+=== gone ===
+
+snd: finalapplause.mp3
+snd: moderate-shortest.mp3
+img: backyard_noship.png
+txt: Now you just have to figure out how to explain the hole in the treehouse...
+act: the_end
+
+
+=== the_end ===
+
+amb: stop, 1.0s
+mus: 426704__fmceretta__corny-christmas-sitcom-opening.ogg
+scr: theend.png
+auto: endcredits,5s
+
+=== endcredits ===
+
+scr: credits.png
+act: game_restart
+
+
+=== game_restart ===
+
+mus: stop, 1.0s
+snd: stop, 1.0s
+amb: stop, 0.1s
+scr: credits.png
+act: restart
+
+
+=== rummage ===
+
+txt: You find a pair of wire cutters. These might come in handy.
+act: get Wire Cutters
+act: set got_wirecutters
+act: return
+
+
+=== rummage_nothing ===
+
+txt: You find nothing of interest.
+act: return
+

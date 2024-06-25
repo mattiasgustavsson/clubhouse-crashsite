@@ -1,0 +1,54 @@
+=== livingroom ===
+
+not firstliving ? snd: 478905__skibkamusic__skibka-music-logo-pn21.wav
+not firstliving ? snd: mild-long1.mp3
+act: set firstliving
+img: livingroom.png
+not dad_gone ? txt: You are in the livingroom. Your dad is in his favorite chair, watching TV.
+dad_gone ? txt: You are in the livingroom.
+
+need_tvbox ? not dad_gone ?
+opt: Pick up the TV box
+act: take_tvbox_fail
+
+need_tvbox ? dad_gone ? not got_tvbox ?
+opt: Pick up the TV box
+act: take_tvbox
+
+opt: Go to your brothers room
+act: brothersroom
+
+opt: Go to the kitchen
+act: kitchen
+
+opt: Go upstairs
+act: hallway
+
+not dad_gone ?
+chr: dad
+act: talk_dad
+
+
+=== talk_dad ===
+
+snd: moderate-long2.mp3
+dad: Not now, Billy, I'm watching the news.
+act: return
+
+
+=== take_tvbox === 
+
+snd: short-applause.mp3
+snd: moderate-long2.mp3
+txt: You disconnect the TV box and pick it up.
+act: get TV Box
+act: set got_tvbox
+act: return
+
+
+=== take_tvbox_fail ===
+
+snd: moderate-short2.mp3
+dad: What are you doing, Billy! Don't mess around with that!
+billy: Sorry, dad.
+act: return

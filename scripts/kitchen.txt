@@ -1,0 +1,90 @@
+=== kitchen ===
+
+not firstkitchen ? snd: 169086__nenadsimic__piano-transition-2.wav
+not firstkitchen ? snd: mild-long1.mp3
+act: set firstkitchen
+img: kitchen.png
+
+not need_micro? txt: You are in the kichen. Your mother is busy cleaning the microwave oven.
+need_micro ? not mom_gone ? txt: You are in the kichen. Your mother is busy making sandwiches.
+mom_gone ? txt: You are in the kichen. 
+
+need_micro ? not mom_gone ?
+opt: Pick up the microwave oven
+act: take_micro_fail
+
+need_micro ? mom_gone ? not got_micro ?
+opt: Pick up the microwave oven
+act: take_micro
+
+opt: Go to the living room
+act: livingroom
+
+opt: Go to the laundry room
+act: laundryroom
+
+opt: Go to the garage
+act: garage
+
+not need_micro, got_sandwich ? not mom_gone ?
+chr: mom
+act: talk_mom
+
+need_micro ? not mom_gone ? not got_sandwich ?
+chr: mom
+act: talk_mom_micro
+
+use: Mouse
+act: scare_mom
+
+
+=== talk_mom ===
+
+snd: mild-short1.mp3
+mom: That's nice dear, why don't you go outside and play.
+act: return
+
+
+=== scare_mom ===
+
+snd: scare_mom.mp3
+snd: 400183__tomattka__girl-screaming_01.wav, 400%
+mom: Aaaah! Billy! Get that mouse out of here!
+act: drop Mouse
+act: set mom_gone
+act: mom_runs
+
+
+=== mom_runs ===
+
+snd: mild-long2.mp3
+txt: Your mother runs out of the kitchen, still screaming.
+act: kitchen
+
+
+=== take_micro === 
+
+snd: short-applause.mp3
+snd: moderate-long2.mp3
+txt: You disconnect the microwave and pick it up.
+act: get Microwave Oven
+act: set got_micro
+act: return
+
+
+=== take_micro_fail ===
+
+snd: moderate-short2.mp3
+mom: Hey, leave that alone Billy!
+billy: Sorry, mom.
+act: return
+
+
+=== talk_mom_micro ===
+
+snd: mild-short1.mp3
+mom: Hey Billy, you hungry? Here's a sandwich for you.
+billy: Thanks mom!
+act: get Sandwich
+act: set got_sandwich
+act: return

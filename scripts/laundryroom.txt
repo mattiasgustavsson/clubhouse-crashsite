@@ -1,0 +1,38 @@
+=== laundryroom ===
+
+img: laundryroom.png
+txt: You are in the laundry room. There are piles of clothes here waiting to be washed.
+
+opt: Examine the clothes
+got_note ? act: find_nothing
+not got_note ? act: find_number
+
+opt: Go to the kitchen
+act: kitchen
+
+
+=== find_number ===
+
+txt: Your brothers jeans are on top of the pile, and you can see a piece of paper sticking out of the pocket.
+
+opt: Take the note
+act: get_note
+
+opt: Go to the living room
+act: kitchen
+
+
+=== get_note ===
+
+snd: short-applause.mp3
+snd: mild-long1.mp3
+txt: The note has a phone number and the name "Kayla" written on it.
+act: get Note
+act: set got_note
+act: laundryroom
+
+
+=== find_nothing ===
+
+txt: There's nothing there but clothes.
+act: return

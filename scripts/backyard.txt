@@ -1,0 +1,113 @@
+=== backyard_investigate ===
+
+snd: stop,0.5s
+snd: 706752__xkeril__nightmare-short-sting.wav
+img: backyard_night.png
+txt: Your treehouse is in the backyard. But there's something different about it...
+act: find_ship
+
+
+=== find_ship ===
+
+snd: mild-short5.mp3
+billy: Whoa! There's an alien spaceship in my treehouse! This is wild!
+act: alien_emerge
+
+
+=== alien_emerge ===
+
+snd: 578398__nomiqbomi__inquisitive-vibraphone-07.mp3
+img: backyard_night.png
+txt: A shape emerges from treehouse, and moves towards you. 
+act: morp_contact
+
+
+=== morp_contact ===
+
+snd: explosive-long1.mp3
+alien: Hello there! How are you this fine evening?
+
+say: Oh, uh, I am fine thank you.
+act: contact_fine
+
+say: You wrecked my clubhouse!
+act: contact_wrecked
+
+
+=== contact_fine === 
+
+snd: mild-short2.mp3
+billy: Oh, uh, I am fine thank you.
+act: contact_fine2
+
+
+=== contact_fine2 ===
+
+snd: moderate-short2.mp3
+alien: I bet you are. I'm Morp, from Betelgeuse-5.
+billy: I'm Billy, Billy Henderson.
+act: contact_fine3
+
+=== contact_fine3 ===
+
+snd: moderate-medium1.mp3
+
+alien: But of course you are. Is there any food around here?
+billy: Uh, I think there's meatloaf in the fridge.
+act: morp_contact2
+
+
+=== morp_contact2 ===
+
+snd: loud-short2.mp3
+alien: Well that will do me just fine.
+
+say: You wrecked my clubhouse!
+act: contact_wrecked
+
+
+=== contact_wrecked === 
+
+snd: mild-long1.mp3
+billy: You wrecked my clubhouse!
+act: contact_wrecked2
+
+
+=== contact_wrecked2 === 
+
+snd: loud-short1.mp3
+alien: Oh, that hole was already there! I swear. I only landed my ship there.
+act: contact_wrecked3
+
+
+=== contact_wrecked3 ===
+
+snd: loud-short2.mp3
+billy: I heard the crash!
+alien: Who's to say what is cause and what is effect, let bygones be bygones, I say.
+act: contact_wrecked4
+
+
+=== contact_wrecked4 ===
+
+snd: mild-long2.mp3
+billy: Fine! But you need to get that thing out of here, my parents will freak out if they see it.
+alien: Ah, that's easier said than done! I can't take off in the condition it is in. I need to replace some parts. And I can't do it without your help. You will help, won't you?
+billy: *sigh* I guess. Get the spaceship out of sight - put it into the garage - and I'll try to help you tomorrow.
+act: billysroom_morning
+
+
+=== backyard ===
+
+not firstbackyard ? snd: 706752__xkeril__nightmare-short-sting.wav
+act: set firstbackyard
+img: backyard_night.png
+txt: backyard
+
+opt: Go to your room
+act: billysroom
+
+chr: alien
+act: talk_alien
+
+
