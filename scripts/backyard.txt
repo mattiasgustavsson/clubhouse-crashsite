@@ -3,14 +3,14 @@
 snd: stop,0.5s
 snd: 706752__xkeril__nightmare-short-sting.wav
 img: backyard_night.png
-txt: Your treehouse is in the backyard. But there's something different about it...
+txt: La tua casa sull'albero c'e' sempre ma...sembra esserci qualcosa di diverso.
 act: find_ship
 
 
 === find_ship ===
 
 snd: mild-short5.mp3
-billy: Whoa! There's an alien spaceship in my treehouse! This is wild!
+billy: Cosa?! Non posso crederci! Una navicella aliena ha sfondato il tetto della mia casa sull'albero.
 act: alien_emerge
 
 
@@ -18,82 +18,82 @@ act: alien_emerge
 
 snd: 578398__nomiqbomi__inquisitive-vibraphone-07.mp3
 img: backyard_night.png
-txt: A shape emerges from treehouse, and moves towards you. 
+txt: Qualcosa di strano sta uscendo dalla porta della casa sull'albero e sembra che stia venendo verso di te.
 act: morp_contact
 
 
 === morp_contact ===
 
 snd: explosive-long1.mp3
-alien: Hello there! How are you this fine evening?
+alien: Heila'! Bella serata vero?
 
-say: Oh, uh, I am fine thank you.
+say: Ehm...si...direi che e' una bella serata...
 act: contact_fine
 
-say: You wrecked my clubhouse!
+say: Hai distrutto il mio quartier generale!
 act: contact_wrecked
 
 
 === contact_fine === 
 
 snd: mild-short2.mp3
-billy: Oh, uh, I am fine thank you.
+billy: Ehm...si...direi che e' una bella serata...
 act: contact_fine2
 
 
 === contact_fine2 ===
 
 snd: moderate-short2.mp3
-alien: I bet you are. I'm Morp, from Betelgeuse-5.
-billy: I'm Billy, Billy Henderson.
+alien: Immagino che tu sia qua perche' non riuscivi a prendere sonno! Sono Morp! Vengo da Betelgeuse-5.
+billy: Sono Billy, Billy Henderson.
 act: contact_fine3
 
 === contact_fine3 ===
 
 snd: moderate-medium1.mp3
 
-alien: But of course you are. Is there any food around here?
-billy: Uh, I think there's meatloaf in the fridge.
+alien: Ma si! Certo che lo sei! C'e' qualcosa da mangiare?
+billy: Penso che ci sia del polpettone in frigo.
 act: morp_contact2
 
 
 === morp_contact2 ===
 
 snd: loud-short2.mp3
-alien: Well that will do me just fine.
+alien: Beh! Direi che va benissimo!
 
-say: You wrecked my clubhouse!
+say: Hai distrutto il mio quartier generale!
 act: contact_wrecked
 
 
 === contact_wrecked === 
 
 snd: mild-long1.mp3
-billy: You wrecked my clubhouse!
+billy: Hai distrutto il mio quartier generale!
 act: contact_wrecked2
 
 
 === contact_wrecked2 === 
 
 snd: loud-short1.mp3
-alien: Oh, that hole was already there! I swear. I only landed my ship there.
+alien: Oh...ehm...il buco c'era gia'! Ci sono semplicemente atterrato sopra!
 act: contact_wrecked3
 
 
 === contact_wrecked3 ===
 
 snd: loud-short2.mp3
-billy: I heard the crash!
-alien: Who's to say what is cause and what is effect, let bygones be bygones, I say.
+billy: Ma ho sentito un rumore fortissimo! Mi sono spaventato!
+alien: Davvero? Chi puo' dire quale sia stata la causa! Mi chiedo se ci siano stati anche dei danni! Non pensiamoci! Meglio non approfondire certi argomenti! Potrebbero essere lunghi e noiosi!
 act: contact_wrecked4
 
 
 === contact_wrecked4 ===
 
 snd: mild-long2.mp3
-billy: Fine! But you need to get that thing out of here, my parents will freak out if they see it.
-alien: Ah, that's easier said than done! I can't take off in the condition it is in. I need to replace some parts. And I can't do it without your help. You will help, won't you?
-billy: *sigh* I guess. Get the spaceship out of sight - put it into the garage - and I'll try to help you tomorrow.
+billy: Va bene! Ma devi togliere quella cosa da li, se i miei genitori la vedono andranno su tutte le furie!
+alien: Ah...e' piu' facile a dirsi che a farsi! Non posso decollare in queste condizioni. Ho bisogno di sostituire alcune parti e non posso farlo senza il tuo aiuto! Mi aiuterai vero?
+billy: ...immagino...togli la navicella da li, portala in garage, domani cerchero' di aiutarti.
 act: billysroom_morning
 
 
@@ -104,7 +104,7 @@ act: set firstbackyard
 img: backyard_night.png
 txt: backyard
 
-opt: Go to your room
+opt: Vai nella tua stanza
 act: billysroom
 
 chr: alien

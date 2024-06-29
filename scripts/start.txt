@@ -10,8 +10,8 @@ hmargin_txt:5
 hmargin_say:5
 hmargin_dialog:5
 hmargin_response:5
-alone_text: You are  alone.
-nothing_text: You carry nothing.
+alone_text: Sei solo.
+nothing_text: Con te non hai niente.
 
 //debug_start: billysroom
 
@@ -61,15 +61,15 @@ face: brother.png
 
 === dad ===
 
-name: Dad
-short: Dad
+name: Papa'
+short: Papa'
 face: dad.png
 
 
 === mom ===
 
-name: Mom
-short: Mom
+name: Mamma
+short: Mamma
 face: mom.png
 
 

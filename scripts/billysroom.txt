@@ -4,56 +4,56 @@ amb: 333960__kostrava__indoor_-apartments_hall_noise-2.wav,1s
 
 snd: stop,0.5s
 img: billysroom_night.png
-txt: You are asleep in your bed, on a night like any other, quiet and peaceful...
+txt: Stai dormendo in camera tua, una notte come tante altre, tranquilla e silenziosa...
 act: sleeping_crash
 
 === sleeping_crash ===
 
 snd: 95078__sandyrb__the-crash.wav
-txt: Suddenly, you are woken by a loud noise.
+txt: Improvvisamente vieni svegliato da un forte rumore!
 act: crash_wake
 
 === crash_wake ===
 
 snd: moderate-short1.mp3
-billy: Holy moly, what was that!
+billy: Santo cielo! Cos'e' stato?
 act: crash_opt
 
 
 === crash_opt ===
 
 img: billysroom_night.png
-txt: What would you like to do?
+txt: Cosa vorresti fare?
 
-opt: Go back to sleep
+opt: Ritorna a dormire
 act: back_to_sleep
 
-opt: Go out to the backyard to investigate
+opt: Vai in giardino e cerca di capire cos'e' successo
 act: backyard_investigate
 
 
 === back_to_sleep ===
 
 snd: mild-short1.mp3
-billy: Are you kidding me!? This is way too exciting, I couldn't possibly go back to sleep now.
+billy: Stai scherzando?! Mi sono spaventato! Non riuscirei mai a prendere sonno!
 act: crash_opt
 
 
 === billysroom ===
 
 img: billysroom.png
-txt: You are in your room upstairs. The shelves along the wall are filled with toys and other things.
+txt: Sei nella tua stanza al piano di sopra. Gli scaffali sono pieni di giocattoli e altre cose.
 
-opt: Look out the window
+opt: Guarda fuori dalla finestra
 act: look_backyard
 
-opt: Dig through the shelves
+opt: Controlla se c'e' qualcosa tra gli scaffali
 got_mousetrap ?
 act: dig_shelves_nothing
 not got_mousetrap ?
 act: dig_shelves
 
-opt: Leave your room
+opt: Lascia la tua stanza
 act: hallway
 
 
@@ -63,7 +63,7 @@ snd: stop,0.5s
 snd: 150879__nenadsimic__jazzy-chords.wav
 snd: mild-long1.mp3
 img: billysroom.png
-txt: The next morning...
+txt: La mattina seguente...
 
 act: billysroom
 
@@ -73,20 +73,20 @@ act: billysroom
 
 snd: mild-long1.mp3
 img: backyard_noship.png
-txt: You can see your treehouse. The spaceship is gone, but the hole is still there.
+txt: La casa sull'albero c'e' sempre ma sul tetto c'e' un buco enorme. Della navicella spaziale non c'e' piu' alcuna traccia.
 act: return
 
 
 === dig_shelves_nothing ===
 
-txt: You look through the shelves, but there's nothing that grabs your attention.
+txt: Tra gli scaffali non c'e' nulla che possa esserti utile.
 act: return
 
 
 === dig_shelves ===
 
-txt: Looking through the shelves, you found the mouse trap you made for the science fair.
-act: get Mouse Trap
+txt: Rovistando tra gli scaffali hai trovato la trappola per topi che avevi costruito per la mostra di scienze.
+act: get Trappola
 act: set got_mousetrap
 act: billy_on_trap
 
@@ -94,7 +94,7 @@ act: billy_on_trap
 === billy_on_trap ===
 
 snd: mild-short1.mp3
-billy: Oh yeah, this thing! I made it so it would catch the mice alive.
-billy: I never tested it. I wonder if it works...
+billy: Ah si! Questa cosa l'avevo costruita per catturare i topi senza rischiare di fargli del male.
+billy: Non l'ho mai provata, ma immagino possa funzionare...
 act: billysroom
 

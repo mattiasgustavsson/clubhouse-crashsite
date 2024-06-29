@@ -1,44 +1,44 @@
 === attic ===
 
 img: attic.png
-not trap_placed ? txt: You are in the attic. There's a lot of dust here, and there are boxes piled everywhere. A bundle of wires runs along the wall.
-trap_placed ? txt: You are in the attic. There's a lot of dust here, and there are boxes piled everywhere. A bundle of wires runs along the wall. Your mouse trap is on the floor.
+not trap_placed ? txt: Sei in soffitta. C'e' molta polvere qui, ci sono scatole ammucchiate ovunque. Lungo la parete ci sono alcuni cavi elettrici.
+trap_placed ? txt: Sei in soffitta. C'e' molta polvere qui, ci sono scatole ammucchiate ovunque. Lungo la parete ci sono alcuni cavi elettrici. Hai posizionato la trappola per topi sul pavimento.
 
-opt: Search the boxes
+opt: Apri le scatole
 act: search_boxes
 
-opt: Examine the wires
+opt: Ispeziona i cavi elettrici
 not dad_gone ? act: examine_wires
 dad_gone ? act: examine_wires_cut
 
 trap_placed ? not got_mouse ?
-opt: Inspect the mouse trap
+opt: Controlla la trappola per topi
 act: inspect_trap
 
-opt: Leave the attic
+opt: Abbandona la soffitta
 act: hallway
 
 know_mice ? 
-use: Mouse Trap
+use: Trappola
 act: place_trap
 
 know_wires ? not dad_gone ?
-use: Wire Cutters
+use: Tronchesi
 act: cut_wires
 
 trap_placed ?
-use: Sandwich
+use: Panino
 act: bait_trap
 
 === search_boxes ===
 
-txt: They are just full of clothes and other boring stuff.
+txt: Sono solo scatole piene di vestiti e altre cose di poco valore.
 act: mouse_trace
 
 
 === mouse_trace ===
 
-txt: It looks like some of them have been nibbled on by mice or rats.
+txt: Sembra che alcune di queste scatole siano state rosicchiate dai topi.
 act: set know_mice
 act: attic
 
@@ -46,8 +46,8 @@ act: attic
 
 === place_trap ===
 
-txt: You place the mouse trap on the floor.
-act: drop Mouse Trap
+txt: Hai posizionato la trappola per topi sul pavimento.
+act: drop Trappola
 act: set trap_placed
 act: return 
 
@@ -55,28 +55,28 @@ act: return
 
 === inspect_trap ===
 
-not trap_baited ? txt: The trap is empty.
-trap_baited ? not mouse_caught ? txt: There is a sandwich in the trap.
+not trap_baited ? txt: La trappola non ha catturato niente.
+trap_baited ? not mouse_caught ? txt: Sulla trappola e' stato messo un panino.
 mouse_caught ? snd: short-applause.mp3
 mouse_caught ? snd: moderate-long2.mp3
-mouse_caught ? txt: There is a live mouse in the trap. You carefully take it out.
-mouse_caught ? act: get Mouse
+mouse_caught ? txt: La trappola ha catturato un topolino. Prendilo con delicatezza.
+mouse_caught ? act: get Topolino
 mouse_caught ? act: set got_mouse
 act: return
 
 
 === examine_wires ===
 
-txt: There's a bundle of wires running down the wall and down through the floor.
-txt: One of them continues up to the satellite dish on the roof.
+txt: Lungo la parete e sul pavimento ci sono alcuni cavi elettrici.
+txt: Sembra che uno di questi cavi sia collegato all'antenna parabolica che e' sul tetto.
 act: set know_wires
 act: return
 
 
 === examine_wires_cut ===
 
-txt: There's a bundle of wires running down the wall and down through the floor.
-txt: The one that goes up to the satellite dish has been cut.
+txt: Lungo la parete e sul pavimento ci sono alcuni cavi elettrici.
+txt: Hai tagliato il cavo elettrico che sembrava essere collegato all'antenna parabolica che e' sul tetto.
 act: set know_wires
 act: return
 
@@ -85,15 +85,15 @@ act: return
 
 snd: 383449__deleted_user_7146007__cutting-clipping-wire-copper.wav
 snd: mild-long1.mp3
-txt: You cut the wire to the satellite dish.
-act: drop Wire Cutters
+txt: Hai tagliato il cavo elettrico che sembra essere collegato all'antenna parabolica.
+act: drop Tronchesi
 act: set dad_gone
 act: return
 
 
 === bait_trap ===
 
-txt: You place the sandwich inside the trap
+txt: Hai messo il panino nella trappola per topi.
 act: set trap_baited
-act: drop Sandwich
+act: drop Panino
 act: return

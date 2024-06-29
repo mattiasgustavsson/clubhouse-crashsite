@@ -3,19 +3,19 @@
 not firstbrother ? snd: 710042__geoff-bremner-audio__free-rock-n-roll-transition-song.ogg
 act: set firstbrother
 img: brothersroom.png
-not brother_gone ? txt: You are in your brothers room. That's the one place you're not supposed to be. Your brother is on the bed, listening to music.
-brother_gone ? txt: You are in your brothers room. That's the one place you're not supposed to be.
+not brother_gone ? txt: Sei nella stanza di tuo fratello. L'unico posto in cui non dovresti essere. Tuo fratello e' sul letto che sta ascoltando della musica.
+brother_gone ? txt: Sei nella stanza di tuo fratello. L'unico posto in cui non dovresti essere.
 
 brother_gone ? not got_amp ? need_amp ?
-opt: Pick up the amplifier
+opt: Prendi l'amplificatore
 act: take_amp
 
 
 not brother_gone ? not got_amp ? need_amp ?
-opt: Pick up the amplifier
+opt: Prendi l'amplificatore
 act: take_amp_fail
 
-opt: Go to the living room
+opt: Vai in soggiorno
 act: livingroom
 
 
@@ -36,39 +36,39 @@ act: talk_brother_amp
 === talk_brother ===
 
 snd: applause.mp3
-brother: Hey, get out of here you little freak!
-billy: Okay, okay!
+brother: Hey, vattene da qua mostriciattolo!
+billy: Ok...
 act: return
 
 
 === talk_brother_amp ===
 
 snd: applause.mp3
-brother: Yeah, what?
-billy: Mom wants you to come down.
-brother: Yeah right, nice try, dweeb. I'm not going anywhere.
+brother: Si, che cosa vuoi?
+billy: La mamma ti ha chiamato!
+brother: Certo! Come no! Bel tentativo secchione! Scordatelo! Quel coso non uscira' di qua!
 act: return
 
 
 === talk_brother_kayla ===
 
 snd: applause.mp3
-brother: Yeah, what?
-billy: There's a girl on the phone for you.
-brother: Girl? What girl?
-billy: She says her name is Kayla, and she really wants to talk to you.
+brother: Che c'e'???
+billy: C'e' una ragazza al telefono che vuole parlare con te!
+brother: Ragazza? Quale ragazza?
+billy: Ha detto che si chiama Kayla e le farebbe tanto piacere parlare con te.
 act: talk_brother_kayla2
 
 === talk_brother_kayla2 ===
 snd: moderate-shortest.mp3
-brother: Oh, man... Hey, don't touch any of my stuff!
+brother: Oh...ok...non ti azzardare a toccare le mie cose!
 act: brother_goes
 
 
 === brother_goes ===
 
 snd: loud-short2.mp3
-txt: Your brother hurries out of the room
+txt: Tuo fratello e' uscito di corsa dalla stanza.
 act: set brother_gone
 act: brothersroom
 
@@ -76,14 +76,14 @@ act: brothersroom
 === take_amp_fail ===
 
 snd: mild-long2.mp3
-brother: Hey, hands off my stuff you little weasel!
+brother: Hey, tieni giu' le mani dalle mie cose piccolo verme!
 act: take_amp_fail2
 
 
 === take_amp_fail2 ===
 
 snd: loud-short1.mp3
-billy: Jeez, sorry dude!
+billy: Ehm...si! Si! Stavo solo dando un'occhiata!
 act: brothersroom
 
 
@@ -91,7 +91,7 @@ act: brothersroom
 
 snd: short-applause.mp3
 snd: moderate-long2.mp3
-txt: You pick up the amplifier.
-act: get Amplifier
+txt: Hai preso l'amplificatore di tuo fratello.
+act: get Amplificatore
 act: set got_amp
 act: return

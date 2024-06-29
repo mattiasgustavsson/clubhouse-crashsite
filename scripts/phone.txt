@@ -3,12 +3,12 @@
 snd: pickup.wav
 snd: dialtone.wav,loop
 img: phone.png
-txt: You don't have anyone to call.
+txt: Alzi la cornetta del telefono ma in realta' non devi chiamare nessuno.
 
-use: Note
+use: Foglietto
 act: call_kayla
 
-opt: Hang up
+opt: Riaggancia il telefono
 act: hallway_hangup
 
 
@@ -17,8 +17,8 @@ act: hallway_hangup
 snd: stop,dialtone.wav,0.2s
 snd: 273345__othercee__mobile_phone_-_dialing_tones_fast_l_close_r_distant.wav
 img: phone.png
-txt: You punch the number written on the note and wait for the call to go through.
-act: drop Note
+txt: Componi il numero di telefono che e' scritto sul foglietto. Il telefono sta squillando.
+act: drop Foglietto
 act: talk_kayla
 
 
@@ -28,12 +28,12 @@ act: talk_kayla
 snd: stop,273345__othercee__mobile_phone_-_dialing_tones_fast_l_close_r_distant.wav
 snd: pickup.wav
 snd: explosive-long1.mp3
-kayla: Hello, Kayla speaking?
-billy: Umm, hi, this is Billy Henderson.
-kayla: Billy who? Who is this, why are you calling me?
-billy: My brother Jake wants to talk to you.
-kayla: Jake! I thought he'd never call! 
-kayla: Well, put him on!
-billy: Ok, I'll go get him, hold on.
+kayla: Pronto?! Sono Kayla.
+billy: Ehm...ciao! Sono Billy Henderson.
+kayla: Billy chi? Chi sei? Perche' mi stai chiamando?
+billy: Mio fratello Jake vorrebbe parlare con te!
+kayla: Jake...pensavo che non mi avrebbe mai chiamata!
+kayla: Bene, passamelo!
+billy: Ok, lo vado a chiamare! Aspetta un attimo!
 act: set kayla_waiting
 act: hallway

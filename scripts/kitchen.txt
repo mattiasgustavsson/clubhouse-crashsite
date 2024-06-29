@@ -5,25 +5,25 @@ not firstkitchen ? snd: mild-long1.mp3
 act: set firstkitchen
 img: kitchen.png
 
-not need_micro? txt: You are in the kichen. Your mother is busy cleaning the microwave oven.
-need_micro ? not mom_gone ? txt: You are in the kichen. Your mother is busy making sandwiches.
-mom_gone ? txt: You are in the kichen. 
+not need_micro? txt: Sei in cucina. Tua mamma sta pulendo il forno a microonde.
+need_micro ? not mom_gone ? txt: Sei in cucina. Tua mamma sta preparando un panino.
+mom_gone ? txt: Sei in cucina.
 
 need_micro ? not mom_gone ?
-opt: Pick up the microwave oven
+opt: Prendi il forno a microonde
 act: take_micro_fail
 
 need_micro ? mom_gone ? not got_micro ?
-opt: Pick up the microwave oven
+opt: Prendi il forno a microonde
 act: take_micro
 
-opt: Go to the living room
+opt: Vai in soggiorno
 act: livingroom
 
-opt: Go to the laundry room
+opt: Vai in lavanderia
 act: laundryroom
 
-opt: Go to the garage
+opt: Vai in garage
 act: garage
 
 not need_micro, got_sandwich ? not mom_gone ?
@@ -34,14 +34,14 @@ need_micro ? not mom_gone ? not got_sandwich ?
 chr: mom
 act: talk_mom_micro
 
-use: Mouse
+use: Topolino
 act: scare_mom
 
 
 === talk_mom ===
 
 snd: mild-short1.mp3
-mom: That's nice dear, why don't you go outside and play.
+mom: C'e' una bellissima giornata! Perche' non vai a giocare fuori?
 act: return
 
 
@@ -49,8 +49,8 @@ act: return
 
 snd: scare_mom.mp3
 snd: 400183__tomattka__girl-screaming_01.wav, 400%
-mom: Aaaah! Billy! Get that mouse out of here!
-act: drop Mouse
+mom: Aaaaah! Billy! Porta via quel topo da qui!
+act: drop Topolino
 act: set mom_gone
 act: mom_runs
 
@@ -58,7 +58,7 @@ act: mom_runs
 === mom_runs ===
 
 snd: mild-long2.mp3
-txt: Your mother runs out of the kitchen, still screaming.
+txt: Tua mamma e' scappata fuori dalla cucina urlando.
 act: kitchen
 
 
@@ -66,8 +66,8 @@ act: kitchen
 
 snd: short-applause.mp3
 snd: moderate-long2.mp3
-txt: You disconnect the microwave and pick it up.
-act: get Microwave Oven
+txt: Hai scollegato il forno a microonde dalla presa elettrica e l'hai preso con te.
+act: get Microonde
 act: set got_micro
 act: return
 
@@ -75,16 +75,16 @@ act: return
 === take_micro_fail ===
 
 snd: moderate-short2.mp3
-mom: Hey, leave that alone Billy!
-billy: Sorry, mom.
+mom: Hey! Che cosa hai intenzione di fare ragazzino?
+billy: Scusa mamma...
 act: return
 
 
 === talk_mom_micro ===
 
 snd: mild-short1.mp3
-mom: Hey Billy, you hungry? Here's a sandwich for you.
-billy: Thanks mom!
-act: get Sandwich
+mom: Hey Billy, hai fame? Prendi questo panino.
+billy: Grazie mamma!
+act: get Panino
 act: set got_sandwich
 act: return

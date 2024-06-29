@@ -4,24 +4,24 @@ not firstliving ? snd: 478905__skibkamusic__skibka-music-logo-pn21.wav
 not firstliving ? snd: mild-long1.mp3
 act: set firstliving
 img: livingroom.png
-not dad_gone ? txt: You are in the livingroom. Your dad is in his favorite chair, watching TV.
-dad_gone ? txt: You are in the livingroom.
+not dad_gone ? txt: Sei nel soggiorno. Tuo papa' e' sulla sua poltrona preferita e sta guardando la TV.
+dad_gone ? txt: Sei nel soggiorno.
 
 need_tvbox ? not dad_gone ?
-opt: Pick up the TV box
+opt: Prendi la TV
 act: take_tvbox_fail
 
 need_tvbox ? dad_gone ? not got_tvbox ?
-opt: Pick up the TV box
+opt: Prendi la TV
 act: take_tvbox
 
-opt: Go to your brothers room
+opt: Vai nella stanza di tuo fratello
 act: brothersroom
 
-opt: Go to the kitchen
+opt: Vai in cucina
 act: kitchen
 
-opt: Go upstairs
+opt: Sali di sopra
 act: hallway
 
 not dad_gone ?
@@ -32,7 +32,7 @@ act: talk_dad
 === talk_dad ===
 
 snd: moderate-long2.mp3
-dad: Not now, Billy, I'm watching the news.
+dad: Non adesso Billy! Sto guardando il telegiornale!
 act: return
 
 
@@ -40,8 +40,8 @@ act: return
 
 snd: short-applause.mp3
 snd: moderate-long2.mp3
-txt: You disconnect the TV box and pick it up.
-act: get TV Box
+txt: Hai scollegato la TV dalla presa elettrica e l'hai presa con te.
+act: get TV
 act: set got_tvbox
 act: return
 
@@ -49,6 +49,6 @@ act: return
 === take_tvbox_fail ===
 
 snd: moderate-short2.mp3
-dad: What are you doing, Billy! Don't mess around with that!
-billy: Sorry, dad.
+dad: Cosa stai facendo Billy? Non lo toccare!
+billy: Scusa papa'...
 act: return

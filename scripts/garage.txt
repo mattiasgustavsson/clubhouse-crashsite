@@ -5,14 +5,14 @@ not firstgarage ? snd: short-applause.mp3
 not firstgarage ? snd: mild-double.mp3
 act: set firstgarage
 img: garage_ship.png
-txt: You are in the garage. Morp's spaceship takes up most of it.
+txt: Sei nel garage. Ci sarebbe piu' spazio se non ci fosse l'astronave di Morp.
 
 need_tvbox ?
-opt: Rummage through the shelves
+opt: Fruga tra gli scaffali
 not got_wirecutters ? act: rummage
 got_wirecutters ? act: rummage_nothing
 
-opt: Go to kitchen
+opt: Vai in cucina
 act: kitchen
 
 not need_amp ? 
@@ -31,53 +31,53 @@ need_amp ? need_micro ? need_tvbox ?
 chr: alien
 act: talk_alien_waiting_tvbox
 
-use: Microwave Oven
+use: Microonde
 act: use_micro
 
-use: Amplifier
+use: Amplificatore
 act: use_amp
 
-use: TV Box
+use: TV
 act: use_tvbox
 
 
 === talk_alien_need_amp ===
 
 snd: loud-short2.mp3
-alien: Meep. Morp. Zeep.
-billy: What the heck was that?
+alien: Meep! Morp! Zeep!
+billy: Che...cosa stai dicendo?
 act: talk_alien_need_amp2
 
 
 === talk_alien_need_amp2 ===
 
 snd: loud-short1.mp3
-alien: Oh, just thought I'd practice my "alien act" a bit, it's important to keep up appearances.
-billy: Yeah, whatever. How's the repairs going?
-alien: Not so well! I need some replacement parts.
-billy: How will we find that here on earth?
+alien: Ho deciso di fare un po' di pratica per apparire come un vero alieno. E' importante farsi riconoscere!
+billy: Certo...come vanno le riparazioni?
+alien: Non tanto bene! Dovro' sostituire alcune parti danneggiate.
+billy: Dove le possiamo trovare qui sulla terra?
 act: talk_alien_need_amp3b
 
 === talk_alien_need_amp3b ===
 
 snd: mild-short5.mp3
-alien: Ah, we will try our best to find the nearest earth equivalent of the advanced alien technology I need.
-alien: First, you need to find a current modulation device.
+alien: Uniamo le nostre forze e cerchiamo di fare del nostro meglio! Dobbiamo trovare sulla terra dei componenti che siano simili a quelli di cui ho bisogno.
+alien: Come prima cosa dovrai trovare un dispositivo in grado di amplificare un segnale!
 act: talk_alien_need_amp3
 
 === talk_alien_need_amp3 ===
 
 snd: moderate-short4.mp3
-billy: A what now?
-alien: Let me see, what do you use it for here on earth...
-alien: I think you use it to make sounds louder.
-billy: Like an amplifier? My brother has one...
+billy: Un cosa...?
+alien: Fammi riflettere...probabilmente qui sulla terra usate qualcosa del genere...
+alien: ...non avete qualcosa per amplificare un suono?
+billy: Un amplificatore? Mio fratello ne ha uno!
 act: talk_alien_need_amp4
 
 === talk_alien_need_amp4 ===
 
 snd: moderate-long1.mp3
-alien: Splendid! Let's have it!
+alien: Splendido! Vallo a prendere!
 act: set need_amp
 act: garage
 
@@ -85,43 +85,43 @@ act: garage
 === talk_alien_waiting_amp ===
 
 snd: mild-short1.mp3
-alien: Did you get the current modulation device?
+alien: Hai preso il dispositivo di amplificazione del segnale?
 
-use: Amplifier
+use: Amplificatore
 act: use_amp
 
-say: Still working on it.
+say: No, ancora no...
 act: return
 
 
 === use_amp ===
 
-act: drop Amplifier
+act: drop Amplificatore
 snd: loud-short1.mp3
-alien: Fantastic! I can't possibly journey through outer space without some banging tunes. This amp will do just fine.
-billy: Wait, I thought you needed it to repair the ship? But the amp wasn't necessary at all was it?
+alien: Fantastico! Non posso certo viaggiare per giorni e giorni nello spazio senza potermi ascoltare un po' di buona musica. Questo amplificatore andra' benissimo.
+billy: Aspetta! Pensavo ti servisse per riparare la navicella! Ma allora a cosa ti serve l'amplificatore?
 act: use_amp2
 
 === use_amp2 ===
 
 snd: loud-short2.mp3
-alien: Sure it was! Did you not hear that part about banging tunes?
-billy: Okay, okay, is there anything you *actually* need in order to take off?
+alien: Certo che serve per riparare la navicella! Hai mai sentito parlare delle frequenze?
+billy: Va bene, va bene! C'e' qualcos'altro che ti puo' essere veramente utile per decollare?
 act: use_amp3
 
 === use_amp3 ===
 
 snd: moderate-shortest.mp3
-alien: Yes! I need a short waveform emitter.
-billy: Where would I find one of those?!
-alien: Here on earth, devices like that are often installed in kitchens.
-billy: What, like a microwave? Yeah we have one of those...
+alien: Si! Avrei bisogno di un dispositivo in grado di emettere delle onde!
+billy: Dove potrei trovarne uno?
+alien: Qui sulla terra, dispositivi del genere spesso si trovano nelle cucine!
+billy: Un...tipo un forno a microonde? Ne abbiamo uno...
 act: use_amp4
 
 === use_amp4 ===
 
 snd: mild-long2.mp3
-alien: Ok, that settles it then! Good job!
+alien: Ok, questo risolvera' tutti i problemi! Hai avuto un'ottima idea!
 act: set need_micro
 act: garage
 
@@ -129,45 +129,45 @@ act: garage
 === talk_alien_waiting_micro ===
 
 snd: mild-short1.mp3
-alien: Did you get the short waveform emitter?
+alien: Sei riuscito a procurarti il generatore di onde?
 
-use: Microwave Oven
+use: Microonde
 act: use_micro
 
-say: Still working on it.
+say: No, ancora no...
 act: return
 
 
 === use_micro ===
 
-act: drop Microwave Oven
+act: drop Microonde
 snd: moderate-long1.mp3
-alien: Yes, yes! This will do splendidly! The microwave oven in my ship is broken, and I hate flying without fresh popcorn. This solves my problem.
-billy: You did it again didn't you. The microwave was not needed for your ship to take off?
+alien: Si! Si! Questo andra' benissimo! Il forno a microonde della mia navicella si e' rotto e odio volare senza poter mangiare degli ottimi pop corn caldi. Questo risolvera' il mio problema.
+billy: L'hai fatto di nuovo! Vero? Il forno a microonde non ti serviva per far decollare la navicella!
 act: use_micro2
 
 === use_micro2 ===
 
 snd: lound-long1.mp3
-alien: Well, I can't take off without being able to make popcorn. What, I have to go all the way back to Betelgeuse-5 without good snacks? That's just cruel.
-billy: Okay, okay, is there anything else? Or can you take off now?
-alien: Well, I do need a long range communication receiver too.
+alien: Beh...non posso volare senza avere la sicurezza di poter mangiare pop corn. Cosa dovrei fare? Dovrei viaggiare fino a Betelgeuse-5 senza mangiare? Sarebbe crudele!
+billy: Va bene, va bene, c'e' qualcos'altro che ti puo' essere utile? Oppure puoi decollare?
+alien: Beh...avrei bisogno anche di un ricevitore di immagini satellitari.
 act: use_micro3
 
 === use_micro3 ===
 
 snd: moderate-medium1.mp3
-billy: I think we are fresh out of those.
-alien: Ah, but I see you have a satellite dish on your roof...
-billy: You need the TV box? My dad would kill me...
+billy: ...penso che non li abbiamo sulla terra...
+alien: Com'e' possibile? Ho visto che sul tetto della casa avete un'antenna parabolica!
+billy: Ti serve la TV vero? Mio padre mi uccidera'...
 act: use_micro4
 
 === use_micro4 ===
 
 snd: explosive-long1.mp3
-alien: That's a price I am willing to pay!
-alien: You don't want me to be stuck here forever, do you?
-billy: Fine, fine.
+alien: E' un prezzo che sono disposto a pagare!
+alien: Non vorrai mica farmi restare qui per sempre...vero?
+billy: Va bene, va bene...
 act: set need_tvbox
 act: garage
 
@@ -175,63 +175,63 @@ act: garage
 === talk_alien_waiting_tvbox ===
 
 snd: mild-short1.mp3
-alien: Did you get the long range communication receiver?
+alien: Hai preso il ricevitore di immagini satellitari?
 
-use: TV Box
+use: TV
 act: use_tvbox
 
-say: Still working on it.
+say: No, ancora no...
 act: return
 
 
 
 === use_tvbox ===
 
-act: drop TV Box
+act: drop TV
 snd: lound-long1.mp3
-alien: Amazing! You basically can't get any good channels along the milky way without one of these. Movie nights are a go!
-billy: I should have known. So your ship was basically fine the whole time, you just wanted these things for comfort?
+alien: Stupendo! Senza uno di questi non sarei mai riuscito a vedere i canali TV della Via Lattea. Serata film garantita!
+billy: L'avrei dovuto immaginare! Quindi la tua navicella era perfettamente funzionante! Volevi solo queste cose per comodita'?
 act: use_tvbox2
 
 === use_tvbox2 ===
 
 snd: moderate-short3.mp3
-alien: Well, what's life without some creature comforts!
-billy: So, that's it, you have everything you need now?
+alien: Beh...che vita sarebbe se non potessimo avere alcun comfort?
+billy: Va bene...e ora? Hai ancora bisogno di altro??
 act: use_tvbox3
 
 === use_tvbox3 ===
 
 snd: mild-short5.mp3
-alien: Well, I wouldn't say that... I'm sure I could think of more things to...
+alien: Beh, direi di no...ma sono sicuro che se mi concentrassi mi verrebbero in mente altre cose...
 act: use_tvbox4
 
 === use_tvbox4 ===
 
 snd: moderate-long1.mp3
-billy: Okay then, everything good, ready to go, have a safe trip now.
-alien: Oh, it's like that now, is it? Well, I will be off then!
-alien: Thank you for all your help! I am sure I will be back here before you know it.
+billy: Ok quindi...e' tutto funzionante, sei pronto per partire...fai buon viaggio!
+alien: Ah...quindi la metti cosi'...beh...allora a questo punto me ne vado...
+alien: Grazie per il tuo aiuto! Sono sicuro che tornero' qui prima di quanto tu possa immaginare.
 act: use_tvbox5
 
 === use_tvbox5 ===
 
 snd: loud-short2.mp3
-billy: Oh God I hope not!
+billy: Oh Dio! Spero di no!
 act: use_tvbox6
 
 === use_tvbox6 ===
 
 snd: moderate-long1.mp3
 snd: moderate-long2.mp3
-alien: Yes, I will miss you too!
+alien: Si! Anche tu mi mancherai!
 act: takeoff
 
 
 === takeoff ===
 
 img: takeoff.png
-txt: Morps ship hovers for a few moments, before it sets off towards space, to take him home to Betelgeuse-5.
+txt: L'astronave di Morp si solleva da terra per qualche secondo. E' decollata! Presto raggiungera' lo spazio e riportera' Morp a casa sua, a Betelgeuse-5.
 act: gone
 
 
@@ -240,7 +240,7 @@ act: gone
 snd: finalapplause.mp3
 snd: moderate-shortest.mp3
 img: backyard_noship.png
-txt: Now you just have to figure out how to explain the hole in the treehouse...
+txt: Ora devi solo capire come giustificare quell'enorme buco sul tetto, spiegare a tuo fratello che fine ha fatto il suo amplificatore, dire a tua mamma che sara' costretta a comprare un forno a microonde nuovo e cercare di calmare tua papa' quando gli spiegherai che la sua TV adesso e' nello spazio.
 act: the_end
 
 
@@ -268,14 +268,14 @@ act: restart
 
 === rummage ===
 
-txt: You find a pair of wire cutters. These might come in handy.
-act: get Wire Cutters
+txt: Hai trovato un paio di tronchesi. Potrebbero essere sempre utili.
+act: get Tronchesi
 act: set got_wirecutters
 act: return
 
 
 === rummage_nothing ===
 
-txt: You find nothing of interest.
+txt: Non trovi nulla di interessante.
 act: return
 

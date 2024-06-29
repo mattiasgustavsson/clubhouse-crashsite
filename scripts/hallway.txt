@@ -3,21 +3,21 @@
 snd: stop,dialtone.wav,0.2s
 trap_baited ? act: set mouse_caught
 img: hallway.png
-not brother_gone ? txt: You are in the hallway outside your room. Stairs lead up to the attic, and other stairs lead down to the ground floor. There is a phone on a table.
-brother_gone ? txt: You are in the hallway outside your room. Stairs lead up to the attic, and other stairs lead down to the ground floor. Your brother is here talking on the phone.
+not brother_gone ? txt: Sei nel corridoio che si trova fuori dalla tua stanza. Ci sono delle scale che portano alla soffitta, altre scale portano al piano terra. Su un tavolino c'e' un telefono.
+brother_gone ? txt: Sei nel corridoio che si trova fuori dalla tua stanza. Ci sono delle scale che portano alla soffitta, altre scale portano al piano terra. Tuo fratello sta parlando al telefono.
 
-opt: Use the phone
+opt: Usa il telefono
 not kayla_waiting ? act: phone
 kayla_waiting ? not brother_gone ? act: talk_kayla_waiting
 brother_gone ? act: brother_talking
 
-opt: Go to your room
+opt: Vai nella tua stanza
 act: billysroom
 
-opt: Go up to the attic
+opt: Sali in soffitta
 act: attic
 
-opt: Go downstairs
+opt: Scendi le scale
 act: livingroom
 
 
@@ -27,21 +27,21 @@ snd: stop,dialtone.wav,0.2s
 snd: hangup.wav
 trap_baited ? act: set mouse_caught
 img: hallway.png
-not brother_gone ? txt: You are in the hallway outside your room. Stairs lead up to the attic, and other stairs lead down to the ground floor. There is a phone on a table.
-brother_gone ? txt: You are in the hallway outside your room. Stairs lead up to the attic, and other stairs lead down to the ground floor. Your brother is here talking on the phone.
+not brother_gone ? txt: Sei nel corridoio che si trova fuori dalla tua stanza. Ci sono delle scale che portano alla soffitta, altre scale portano al piano terra. Su un tavolino c'e' un telefono.
+brother_gone ? txt: Sei nel corridoio che si trova fuori dalla tua stanza. Ci sono delle scale che portano alla soffitta, altre scale portano al piano terra. Tuo fratello sta parlando al telefono.
 
-opt: Use the phone
+opt: Usa il telefono
 not kayla_waiting ? act: phone
 kayla_waiting ? not brother_gone ? act: talk_kayla_waiting
 brother_gone ? act: brother_talking
 
-opt: Go to your room
+opt: Vai nella tua stanza
 act: billysroom
 
-opt: Go up to the attic
+opt: Sali in soffitta
 act: attic
 
-opt: Go downstairs
+opt: Scendi giu'
 act: livingroom
 
 
@@ -49,19 +49,19 @@ act: livingroom
 === talk_kayla_waiting ===
 
 snd: mild-short2.mp3
-kayla: Hello? Jake?
-billy: Uh, no, it's Billy again...
+kayla: Pronto? Jake?
+billy: Ehm...no! Sono ancora Billy...
 act: talk_kayla_waiting2
 
 === talk_kayla_waiting2 ===
 
 snd: loud-short1.mp3
-kayla: Well go and get Jake already! 
-billy: Okay, okay!
+kayla: Dai! Passami Jake!
+billy: Va bene, va bene...
 act: hallway
 
 
 === brother_talking ===
 
-txt: You can't use the phone right now, Jake is still talking to Kayla.
+txt: Non puoi usare il telefono adesso! Jake e' ancora al telefono con Kayla!
 act: return
