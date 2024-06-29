@@ -1,5 +1,7 @@
 # clubhouse-crashsite 
-Short jam game made with Yarnspin 
+Short jam game made with Yarnspin.
+
+This branch is a translation to Italian by [Il Favoloso Mondo di Leo](https://ilfavolosomondodileo.wordpress.com/)
 
 
 ## License
